@@ -1,0 +1,43 @@
+{
+    "name": "kirschbaum-development/bee-plugin-php-client",
+    "description": "PHP client to interact with Bee's plugin API",
+    "keywords": [
+        "kirschbaum-development",
+        "bee-plugin-php-client"
+    ],
+    "homepage": "https://github.com/kirschbaum-development/bee-plugin-php-client",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Luis Dalmolin",
+            "email": "luis@kirschbaumdevelopment.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KirschbaumDevelopment\\Bee\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KirschbaumDevelopment\\Bee\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
