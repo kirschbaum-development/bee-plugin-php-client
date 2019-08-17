@@ -26,6 +26,53 @@ $bee = new Bee(new \GuzzleHttp\Client);
 $bee->setApiToken('your-api-token-here');
 ```
 
+### Using Message Services API: HTML
+
+This API allows you to post the JSON content generated on the Bee editor, and it will return the rendered HTML of the JSON. Reference: https://docs.beefree.io/message-services-api-reference/#html
+
+```php
+$beeEditorData = []; // this will be the JSON generated using the editor
+$html = $bee->html($beeEditorData);
+```
+
+### Using Message Services API: PDF
+
+This API allows you to post the HTML content and get an URL with a PDF created from the HTML. Reference: https://docs.beefree.io/message-services-api-reference/#pdf
+
+```php
+$pdf = $bee->pdf([
+    'html' => $html, // HTML generated using the HTML API (required)
+    'page_size' => 'Letter', // (optional)
+    'page_orientation' => 'Landscape', // (optional)
+]);
+
+// then, you can call these methods:
+$pdf->getUrl();
+$pdf->getFilename();
+$pdf->getPageSize();
+$pdf->getPageOrientation();
+$pdf->getContentType();
+```
+
+### Using Message Services API: Image
+
+This API allows you to post the HTML content and get an URL with a PDF created from the HTML. Reference: https://docs.beefree.io/message-services-api-reference/#image
+
+```php
+$image = $bee->image([
+    'html' => $html, // HTML generated using the HTML API (required)
+    'width' => 500, // (required)
+    'height' => 400, // (optional)
+    'file_type' => 'jpg',
+]);
+
+// then, you can save the image content somewhere, some examples on how you may do this:
+file_put_contents('/path/to/storage/image.jpg', $image);
+
+// on Laravel with Storage object:
+Storage::put('/path/to/storage/image.jpg', $image);
+```
+
 ### Testing
 
 ``` bash

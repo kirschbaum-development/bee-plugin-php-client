@@ -2,7 +2,9 @@
 
 namespace KirschbaumDevelopment\Bee;
 
+use Exception;
 use GuzzleHttp\Client as GuzzleClient;
+use KirschbaumDevelopment\Bee\Resources\Pdf;
 
 class Bee
 {
@@ -68,6 +70,10 @@ class Bee
      */
     public function pdf(array $payload)
     {
+        if (! isset($payload['html'])) {
+            throw new Exception('"html" parameter is required to generate PDFs');
+        }
+
         $response = $this->httpClient->post(
             sprintf('%s/pdf', static::API_BASE_URL),
             [
@@ -78,7 +84,7 @@ class Bee
             ]
         );
 
-        return json_decode($response->getBody()->getContents(), true);
+        return new Pdf(json_decode($response->getBody()->getContents(), true));
     }
 
     /**
