@@ -29,7 +29,7 @@ class BeeAuthTest extends TestCase
             'userName' => 'Tn3KV7JYavWn',
             'as:region' => 'eu-west-1',
             '.issued' => 'Sat, 17 Aug 2019 00:08:50 GMT',
-            '.expires' => 'Sat, 17 Aug 2019 00:13:50 GMT'
+            '.expires' => 'Sat, 17 Aug 2019 00:13:50 GMT',
         ];
 
         $mock = new MockHandler([new Response(200, [], json_encode($response))]);

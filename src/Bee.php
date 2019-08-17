@@ -38,6 +38,7 @@ class Bee
     public function setApiToken($apiToken)
     {
         $this->apiToken = $apiToken;
+
         return $this;
     }
 
@@ -55,7 +56,7 @@ class Bee
                 'headers' => $this->formatHeaders([
                     'Content-Type' => 'application/json',
                 ]),
-                'json' => $json
+                'json' => $json,
             ]
         );
 
