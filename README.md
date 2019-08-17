@@ -1,7 +1,7 @@
 # Bee Plugin PHP Client
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
-[![Build Status](https://img.shields.io/travis/kirschbaum-development/bee-plugin-php-client/master.svg?style=flat-square)](https://travis-ci.org/kirschbaum-development/bee-plugin-php-client)
+[![Build Status](https://travis-ci.org/kirschbaum-development/bee-plugin-php-client.svg?branch=master)](https://travis-ci.org/kirschbaum-development/bee-plugin-php-client)
 [![Quality Score](https://img.shields.io/scrutinizer/g/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://scrutinizer-ci.com/g/kirschbaum-development/bee-plugin-php-client)
 [![Total Downloads](https://img.shields.io/packagist/dt/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
 
