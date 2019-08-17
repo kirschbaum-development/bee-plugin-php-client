@@ -40,6 +40,7 @@ class BeeAuth
     public function setClientId($clientId)
     {
         $this->clientId = $clientId;
+
         return $this;
     }
 
@@ -51,6 +52,7 @@ class BeeAuth
     public function setClientSecret($clientSecret)
     {
         $this->clientSecret = $clientSecret;
+
         return $this;
     }
 
@@ -66,7 +68,7 @@ class BeeAuth
                 'grant_type' => 'password',
                 'client_id' => $this->clientId,
                 'client_secret' => $this->clientSecret,
-            ]
+            ],
         ]);
 
         return new AuthorizationToken(json_decode($response->getBody()->getContents(), true));

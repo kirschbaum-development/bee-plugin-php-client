@@ -40,7 +40,7 @@ class BeeTest extends TestCase
             'filename' => 'file.pdf',
             'page_size' => 'full',
             'page_orientation' => 'portrait',
-            'content_type' => 'application/pdf'
+            'content_type' => 'application/pdf',
         ];
 
         $mock = new MockHandler([new Response(200, [], json_encode($response))]);
