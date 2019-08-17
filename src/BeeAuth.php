@@ -3,6 +3,7 @@
 namespace KirschbaumDevelopment\Bee;
 
 use GuzzleHttp\Client as GuzzleClient;
+use KirschbaumDevelopment\Bee\Resources\AuthorizationToken;
 
 class BeeAuth
 {
@@ -54,24 +55,11 @@ class BeeAuth
     }
 
     /**
-     * Return the default headers.
-     *
-     * @param array $headers
-     * @return array
-     */
-    protected function formatHeaders($headers = [])
-    {
-        return array_merge([
-            'Authorization' => sprintf('Bearer %s', $this->getAuthorizationHeader()),
-        ], $headers);
-    }
-
-    /**
      * Return the 'Authorization' header value.
      *
      * @return string
      */
-    protected function getAuthorizationHeader()
+    public function generateToken()
     {
         $response = $this->httpClient->post(static::API_AUTH_URL, [
             'form_params' => [
@@ -81,23 +69,6 @@ class BeeAuth
             ]
         ]);
 
-        $contents = json_decode($response->getBody()->getContents(), true);
-
-        return $contents['access_token'];
-    }
-
-    /**
-     * Make sure JSON is encoded.
-     *
-     * @param mixed $json
-     * @return string
-     */
-    protected function encodeJson($json)
-    {
-        if (is_array($json) || is_object($json)) {
-            return json_encode($json);
-        }
-
-        return $json;
+        return new AuthorizationToken(json_decode($response->getBody()->getContents(), true));
     }
 }

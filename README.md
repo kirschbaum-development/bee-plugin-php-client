@@ -73,6 +73,24 @@ file_put_contents('/path/to/storage/image.jpg', $image);
 Storage::put('/path/to/storage/image.jpg', $image);
 ```
 
+## Generating access token
+
+To initialize Bee Editor you may need an access token. You can use `BeeAuth` to easily generate that. You can grab the Client ID and Secret by logging in into the [Developer portal](https://developers.beefree.io) and going to the "details" of your application.
+
+```php
+use KirschbaumDevelopment\Bee\BeeAuth;
+
+$beeAuth = new BeeAuth(new \GuzzleHttp\Client);
+$beeAuth->setClientId('your-client-id-here');
+$beeAuth->setClientSecret('your-client-secret-here');
+$token = $beeAuth->generateToken();
+
+// then you can use the following methods:
+$token->getAccessToken();
+$token->getRefreshToken();
+$token->getExpires();
+```
+
 ### Testing
 
 ``` bash
