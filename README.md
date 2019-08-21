@@ -5,7 +5,7 @@
 [![StyleCI](https://github.styleci.io/repos/202812418/shield?branch=master)](https://github.styleci.io/repos/202812418)
 [![Total Downloads](https://img.shields.io/packagist/dt/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
 
-PHP client to interact with Bee's plugin API. This includes the [Message Services API](https://docs.beefree.io/message-services-api-reference/) and a convinient way to use [authorization](https://docs.beefree.io/authorization-process/).
+PHP client to interact with Bee's plugin API. This includes the [Message Services API](https://docs.beefree.io/message-services-api-reference/) and a convenient way to use [authorization](https://docs.beefree.io/authorization-process/).
 
 ## Installation
 
