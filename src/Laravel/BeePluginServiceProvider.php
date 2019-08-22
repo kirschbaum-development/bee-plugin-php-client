@@ -23,7 +23,7 @@ class BeePluginServiceProvider extends ServiceProvider
 
         $this->app->bind(BeeAuth::class, function () {
             $client = new BeeAuth(resolve(Client::class));
-            $client->setCache($this->app('cache.store'));
+            $client->setCache(app('cache.store'));
 
             if (config('services.bee.client_id')) {
                 $client->setClientId(config('services.bee.client_id'));
