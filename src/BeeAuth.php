@@ -2,6 +2,7 @@
 
 namespace KirschbaumDevelopment\Bee;
 
+use Psr\SimpleCache\CacheInterface;
 use GuzzleHttp\Client as GuzzleClient;
 use KirschbaumDevelopment\Bee\Resources\AuthorizationToken;
 
@@ -23,6 +24,13 @@ class BeeAuth
      * @var string
      */
     protected $clientSecret;
+
+    /**
+     * Cache PSR compatible.
+     *
+     * @var \Psr\SimpleCache\CacheInterface
+     */
+    protected $cache;
 
     /**
      * @param \GuzzleHttp\Client $httpClient
@@ -57,12 +65,28 @@ class BeeAuth
     }
 
     /**
+     * Set the cache.
+     *
+     * @param Psr\SimpleCache\CacheInterface $cache
+     */
+    public function setCache(CacheInterface $cache)
+    {
+        $this->cache = $cache;
+
+        return $this;
+    }
+
+    /**
      * Return the 'Authorization' header value.
      *
      * @return string
      */
     public function generateToken()
     {
+        if ($this->cache && $this->cache->has($this->getCacheKey())) {
+            return new AuthorizationToken($this->cache->get($this->getCacheKey()));
+        }
+
         $response = $this->httpClient->post(static::API_AUTH_URL, [
             'form_params' => [
                 'grant_type' => 'password',
@@ -71,6 +95,17 @@ class BeeAuth
             ],
         ]);
 
-        return new AuthorizationToken(json_decode($response->getBody()->getContents(), true));
+        $token = new AuthorizationToken(json_decode($response->getBody()->getContents(), true));
+
+        if ($this->cache) {
+            $this->cache->set($this->getCacheKey(), $token->toArray(), ($token->getExpiresIn() - 10));
+        }
+
+        return $token;
+    }
+
+    protected function getCacheKey()
+    {
+        return 'kdg.bee-plugin.bee-auth.token';
     }
 }

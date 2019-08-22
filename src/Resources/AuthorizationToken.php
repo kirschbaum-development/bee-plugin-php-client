@@ -68,4 +68,17 @@ class AuthorizationToken
     {
         return $this->refreshToken;
     }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'access_token' => $this->accessToken,
+            'token_type' => $this->tokenType,
+            'expires_in' => $this->expiresIn,
+            'refresh_token' => $this->refreshToken,
+        ];
+    }
 }
