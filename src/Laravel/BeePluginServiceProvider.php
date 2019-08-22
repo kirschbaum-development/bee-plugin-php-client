@@ -25,11 +25,11 @@ class BeePluginServiceProvider extends ServiceProvider
             $client = new BeeAuth(resolve(Client::class));
 
             if (config('services.bee.client_id')) {
-                $client->setApiToken(config('services.bee.client_id'));
+                $client->setClientId(config('services.bee.client_id'));
             }
 
             if (config('services.bee.client_secret')) {
-                $client->setApiToken(config('services.bee.client_secret'));
+                $client->setClientSecret(config('services.bee.client_secret'));
             }
 
             return $client;

@@ -104,7 +104,7 @@ If you use Laravel, `BeePluginServiceProvider` will be auto-registered if you us
 ],
 ```
 
-This will make that any time you ask Laravel for `KirschbaumDevelopment\Bee\Bee` or `KirschbaumDevelopment\Bee\BeeAuth` using the Laravel container (e.g. `app(Bee::class)`), Guzzle will be automatically injected and also the API token and Client ID/Secret will be injected into the classes.
+This will make sure that any time you ask Laravel for `KirschbaumDevelopment\Bee\Bee` or `KirschbaumDevelopment\Bee\BeeAuth` using the Laravel container (e.g. `app(Bee::class)`), Guzzle will be automatically injected and also the API token and Client ID/Secret will be injected into the classes.
 
 The config values will be extracted from the following config: `.services.bee`. So, we'll use the following conventions:
 
