@@ -93,6 +93,27 @@ $token->getRefreshToken();
 $token->getExpires();
 ```
 
+## Usage with Laravel
+
+If you use Laravel, `BeePluginServiceProvider` will be auto-registered if you use Laravel package discovery. Otherwise, you can manually register the following provider:
+
+```php
+'providers' => [
+    // ...
+    KirschbaumDevelopment\Bee\Laravel\BeePluginServiceProvider::class,
+],
+```
+
+This will make that any time you ask Laravel for `KirschbaumDevelopment\Bee\Bee` or `KirschbaumDevelopment\Bee\BeeAuth` using the Laravel container (e.g. `app(Bee::class)`), Guzzle will be automatically injected and also the API token and Client ID/Secret will be injected into the classes.
+
+The config values will be extracted from the following config: `.services.bee`. So, we'll use the following conventions:
+
+API Token: `config('services.bee.api_token')`
+Client ID: `config('services.bee.client_id')`
+Client Secret: `config('services.bee.client_secret')`
+
+If you don't want to use this config, you can always pass the values manually.
+
 ### Testing
 
 ``` bash
