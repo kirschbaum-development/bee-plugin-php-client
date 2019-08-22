@@ -1,5 +1,7 @@
 # Bee Plugin PHP Client
 
+![](https://raw.githubusercontent.com/kirschbaum-development/bee-plugin-php-client/master/banner.png)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
 [![Build Status](https://travis-ci.org/kirschbaum-development/bee-plugin-php-client.svg?branch=master)](https://travis-ci.org/kirschbaum-development/bee-plugin-php-client)
 [![StyleCI](https://github.styleci.io/repos/202812418/shield?branch=master)](https://github.styleci.io/repos/202812418)
