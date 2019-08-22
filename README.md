@@ -93,6 +93,12 @@ $token->getRefreshToken();
 $token->getExpires();
 ```
 
+Auth tokens are valid for 5 minutes. If you want to cache your tokens for as much as possible, you will need to pass a [PSR-16](https://www.php-fig.org/psr/psr-16/) compartible cache implementation. Laravel, Symfony and all major frameworks are already compatible with this interface. To enable cache, you only need to call the `setCache` method passing a `Psr\SimpleCache\CacheInterface` implementation.
+
+```php
+$beeAuth->setCache($cacheImplementation);
+```
+
 ## Usage with Laravel
 
 If you use Laravel, `BeePluginServiceProvider` will be auto-registered if you use Laravel package discovery. Otherwise, you can manually register the following provider:
@@ -113,6 +119,8 @@ Client ID: `config('services.bee.client_id')`
 Client Secret: `config('services.bee.client_secret')`
 
 If you don't want to use this config, you can always pass the values manually.
+
+Laravel service provider will also automatically inject Laravel's cache implementation on `BeeAuth`, so your auth tokens will be cached for as long as possible.
 
 ### Testing
 

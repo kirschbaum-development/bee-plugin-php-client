@@ -4,7 +4,6 @@ namespace KirschbaumDevelopment\Bee\Laravel;
 
 use GuzzleHttp\Client;
 use KirschbaumDevelopment\Bee\Bee;
-use Psr\Cache\CacheItemPoolInterface;
 use KirschbaumDevelopment\Bee\BeeAuth;
 use Illuminate\Support\ServiceProvider;
 
