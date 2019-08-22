@@ -93,7 +93,7 @@ $token->getRefreshToken();
 $token->getExpires();
 ```
 
-Auth tokens are valid for 5 minutes. If you want to cache your tokens for as much as possible, you will need to pass a [PSR-16](https://www.php-fig.org/psr/psr-16/) compartible cache implementation. Laravel, Symfony and all major frameworks are already compatible with this interface. To enable cache, you only need to call the `setCache` method passing a `Psr\SimpleCache\CacheInterface` implementation.
+Auth tokens are valid for 5 minutes. If you want to cache your tokens for as long as possible, you will need to pass a [PSR-16](https://www.php-fig.org/psr/psr-16/) compatible cache implementation. Laravel, Symfony and all major frameworks are already compatible with this interface. To enable the cache, you only need to call the `setCache` method passing a `Psr\SimpleCache\CacheInterface` implementation.
 
 ```php
 $beeAuth->setCache($cacheImplementation);

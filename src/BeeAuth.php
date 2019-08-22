@@ -106,6 +106,6 @@ class BeeAuth
 
     protected function getCacheKey()
     {
-        return 'kdg.bee-plugin.bee-auth.token';
+        return 'bee-plugin.bee-auth.token';
     }
 }
