@@ -9,8 +9,8 @@ use Illuminate\Support\ServiceProvider;
 
 class BeePluginServiceProvider extends ServiceProvider
 {
-	public function boot()
-	{
+    public function boot()
+    {
         $this->app->bind(Bee::class, function () {
             $client = new Bee(resolve(Client::class));
 
