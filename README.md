@@ -120,9 +120,23 @@ Client Secret: `config('services.bee.client_secret')`
 
 If you don't want to use this config, you can always pass the values manually.
 
+### Caching with Laravel
+
 Laravel service provider will also automatically inject Laravel's cache implementation on `BeeAuth`, so your auth tokens will be cached for as long as possible.
 
-### Testing
+### Testing with Laravel
+
+If you are writing integration tests, but don't want your tests making requests to Bee to get credentials, we have a little helper that can help you. Just run the following code:
+
+```php
+use KirschbaumDevelopment\Bee\Laravel\BeeAuthMock;
+
+BeeAuthMock::init();
+```
+
+With this, any time you call `BeeAuth::generateToken()` in your code you will receive the same response you would receive, but with some fake tokens and without making any HTTP requests.
+
+## Testing
 
 ``` bash
 composer test
