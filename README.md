@@ -4,6 +4,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
 [![Actions Status](https://github.com/kirschbaum-development/bee-plugin-php-client/workflows/CI/badge.svg)](https://github.com/kirschbaum-development/bee-plugin-php-client/actions)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![StyleCI](https://github.styleci.io/repos/202812418/shield?branch=master)](https://github.styleci.io/repos/202812418)
 [![Total Downloads](https://img.shields.io/packagist/dt/kirschbaum-development/bee-plugin-php-client.svg?style=flat-square)](https://packagist.org/packages/kirschbaum-development/bee-plugin-php-client)
 
