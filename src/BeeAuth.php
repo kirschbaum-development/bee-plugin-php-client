@@ -33,7 +33,7 @@ class BeeAuth
     protected $cache;
 
     /**
-     * @param \GuzzleHttp\Client $httpClient
+     * @param  \GuzzleHttp\Client  $httpClient
      */
     public function __construct(GuzzleClient $httpClient)
     {
@@ -43,7 +43,7 @@ class BeeAuth
     /**
      * Set client ID.
      *
-     * @param string $clientId
+     * @param  string  $clientId
      */
     public function setClientId($clientId)
     {
@@ -55,7 +55,7 @@ class BeeAuth
     /**
      * Set client secret.
      *
-     * @param string $clientSecret
+     * @param  string  $clientSecret
      */
     public function setClientSecret($clientSecret)
     {
@@ -67,7 +67,7 @@ class BeeAuth
     /**
      * Set the cache.
      *
-     * @param Psr\SimpleCache\CacheInterface $cache
+     * @param  Psr\SimpleCache\CacheInterface  $cache
      */
     public function setCache(CacheInterface $cache)
     {

@@ -23,7 +23,7 @@ class Bee
     protected $apiToken;
 
     /**
-     * @param \GuzzleHttp\Client $httpClient
+     * @param  \GuzzleHttp\Client  $httpClient
      */
     public function __construct(GuzzleClient $httpClient)
     {
@@ -33,7 +33,7 @@ class Bee
     /**
      * Set the API token.
      *
-     * @param string $clientId
+     * @param  string  $clientId
      */
     public function setApiToken($apiToken)
     {
@@ -45,7 +45,7 @@ class Bee
     /**
      * Message API: Generate HTML from the JSON content.
      *
-     * @param array $json
+     * @param  array  $json
      * @return string
      */
     public function html(array $json)
@@ -66,7 +66,7 @@ class Bee
     /**
      * Message API: Generate PDF from the JSON content.
      *
-     * @param array $payload
+     * @param  array  $payload
      * @return string
      */
     public function pdf(array $payload)
@@ -91,7 +91,7 @@ class Bee
     /**
      * Message API: Generate image from the JSON content.
      *
-     * @param array $payload
+     * @param  array  $payload
      * @return string
      */
     public function image(array $payload)
@@ -112,7 +112,7 @@ class Bee
     /**
      * Return the default headers.
      *
-     * @param array $headers
+     * @param  array  $headers
      * @return array
      */
     protected function formatHeaders($headers = [])
