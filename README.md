@@ -91,7 +91,7 @@ $token = $beeAuth->generateToken();
 // then you can use the following methods:
 $token->getAccessToken();
 $token->getRefreshToken();
-$token->getExpires();
+$token->getExpiresIn();
 ```
 
 Auth tokens are valid for 5 minutes. If you want to cache your tokens for as long as possible, you will need to pass a [PSR-16](https://www.php-fig.org/psr/psr-16/) compatible cache implementation. Laravel, Symfony and all major frameworks are already compatible with this interface. To enable the cache, you only need to call the `setCache` method passing a `Psr\SimpleCache\CacheInterface` implementation.
